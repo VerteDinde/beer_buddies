@@ -23,6 +23,7 @@ function loadData(load) {
 function storeData(store) {
   var userDataJSON = JSON.stringify(allUsers);
   localStorage.setItem(store, userDataJSON);
+  console.log('storeData() :: storing data<' + store + '>');
 }
 
 // Gather User Data //
@@ -57,12 +58,14 @@ function generateUser(event) {
     }
   }
 
-  if (userNameConflict = false) {
+  if (userNameConflict === false) {
       allUsers.push(newUser);
+      console.log('generateUser() :: pushing newUser<' + newUser + '> to allUsers');
   }
 
   event.target.username.value = '';
 
+  console.log('generateUser() :: allUsers is: ' + allUsers);
   storeData('userData');
   resetIcon();
 }
