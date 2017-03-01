@@ -8,10 +8,27 @@ var questB = '';
 var questC = '';
 var questD = '';
 
+var currentUser;
+var allUsersCurrentIndex;
+
 // All localStorage functions //
 function callUserData() {
   var retrievedUserData = localStorage.getItem('userData');
   allUsers = JSON.parse(retrievedUserData);
+  currentUser = localStorage.getItem('currentUser');
+
+  for (var i = 0; i < allUsers.length; i++) {
+    if (allUsers[i].name === currentUser) {
+      allUsersCurrentIndex = i;
+      break;
+    }
+  }
+}
+
+function storeData(store) {
+  var userDataJSON = JSON.stringify(allUsers);
+  localStorage.setItem(store, userDataJSON);
+  console.log('storeData() :: storing data<' + store + '>');
 }
 
 function retrieveCategory() {
@@ -87,9 +104,9 @@ function clearUsers() {
 }
 
 // FUNCTIONS TO RUN GAME
+callUserData();
 function generateSports(qIndex) {
   retrieveCategory();
-  callUserData();
   clearUsers();   //this clears previous users in the footer 
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
@@ -141,7 +158,10 @@ function generateClickHandler(qIndex) {
 
     if (clickedAnswer === chosenCategory[qIndex].right) {
       printAnswer.textContent = 'Congrats! You got it right!';
-      allUsers.score ++;
+
+      allUsers[allUsersCurrentIndex].score++; // increment score
+      console.log('Current user ' + allUsers[allUsersCurrentIndex].name + ' has score of: ' + allUsers[allUsersCurrentIndex].score); // replace with user feedback?
+
       if (qIndex < (chosenCategory.length - 1)) {
         generateSports(qIndex + 1);
       } else {
@@ -152,6 +172,7 @@ function generateClickHandler(qIndex) {
       if (qIndex < (chosenCategory.length - 1)) {
         generateSports(qIndex + 1);
       } else {
+        storeData('userData'); // done with game, store updated user with score property
         window.location.replace('about.html');
       }
     } else {
