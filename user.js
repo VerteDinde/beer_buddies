@@ -11,10 +11,10 @@ function User(name, drink) {
 }
 
 // Store All User Data to localStorage
-function loadData(load) {
+function loadData() {
   if (localStorage['userData']) {
   var userDataLSString = localStorage['userData'];
-  load = JSON.parse(userDataLSString);
+  return JSON.parse(userDataLSString);
   } else {
     console.log('loadData() :: no userData key found in localStorage object');
   }
@@ -35,7 +35,7 @@ userForm.addEventListener('submit', generateUser);
 function generateUser(event) {
   console.log('generateUser() :: ***fired***')
   event.preventDefault();
-  loadData(allUsers);
+  allUsers = loadData();
   var userName = event.target.username.value;
   var radios = event.target.avatar;
 
@@ -62,6 +62,8 @@ function generateUser(event) {
       allUsers.push(newUser);
       console.log('generateUser() :: pushing newUser<' + newUser + '> to allUsers');
   }
+
+  localStorage.setItem('currentUser', newUser.name); // used by app.js
 
   event.target.username.value = '';
 
