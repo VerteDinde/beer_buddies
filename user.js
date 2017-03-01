@@ -33,7 +33,7 @@ userForm.addEventListener('submit', generateUser);
 
 // generate a new user from the event handler
 function generateUser(event) {
-  console.log('generateUser() :: ***fired***')
+  console.log('generateUser() :: ***fired***');
   event.preventDefault();
   allUsers = loadData();
   var userName = event.target.username.value;
@@ -49,27 +49,49 @@ function generateUser(event) {
   // check to see if user already exists, overwrite if so
   var newUser = new User(userName, userDrink);
   var userNameConflict = false;
-  for (var i = 0; i < allUsers.length; i++) {
-    if (allUsers[i].name === newUser.name) {
-      allUsers[i] = newUser;
+  for (var j = 0; j < allUsers.length; j++) {
+    if (allUsers[j].name === newUser.name) {
+      allUsers[j] = newUser;
       userNameConflict = true;
       console.log('generateUser() :: name already exists; overwriting user object at index ' + i + ' of allUsers'); // consider giving user-visible feedback
       break;
     }
   }
-
   if (userNameConflict === false) {
-      allUsers.push(newUser);
-      console.log('generateUser() :: pushing newUser<' + newUser + '> to allUsers');
+    allUsers.push(newUser);
+    console.log('generateUser() :: pushing newUser<' + newUser + '> to allUsers');
   }
 
   localStorage.setItem('currentUser', newUser.name); // used by app.js
 
   event.target.username.value = '';
-
   console.log('generateUser() :: allUsers is: ' + allUsers);
   storeData('userData');
   resetIcon();
+  generateUsers();
+}
+
+// Generate user displays
+function generateUsers() {
+  // Add user information
+  var userFooter = document.getElementById('users');
+  userFooter.textContent = '';  // necessary to blow away old generated users
+  for (var j = 0; j < allUsers.length; j++) {
+    var userBlock = document.createElement('div');
+    userBlock.id = 'user-block';
+    userFooter.appendChild(userBlock);
+    var uName = document.createElement('div');
+    uName.textContent = allUsers[j].name;
+    userBlock.appendChild(uName);
+
+    var uDrink = document.createElement('img');
+    uDrink.setAttribute('src', allUsers[j].drink);
+    userBlock.appendChild(uDrink);
+
+    var uScore = document.createElement('div');
+    uScore.textContent = allUsers[j].score;
+    userBlock.appendChild(uScore);
+  }
 }
 
 // Start Game and Retrieve Data
@@ -99,11 +121,11 @@ var winnerCircle = [];
 
 function winners() {
   var winnerScore = [];
-  for(var i = 0; i < allUsers.length; i++) {
+  for (var i = 0; i < allUsers.length; i++) {
     winnerScore.push(allUsers[i].score);
   }
   winnerScore.sort();
-  for(var j = 0; j < winnerScore.length; j++) {
+  for (var j = 0; j < winnerScore.length; j++) {
     if (winnerScore[j] === allUsers[j].score) {
       winnerCircle.push(allUsers[j]);
     }

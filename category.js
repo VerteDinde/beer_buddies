@@ -52,7 +52,7 @@ var sportTen = new Question('in 1994, NBA legend Michael Jordan played Double-A 
 sportsQuestions.push(sportTen);
 
 //Entertainment Questions Below This Line
-var entertainOne = new Question('When asked what he had done with his life to merit an invitation to the Whitehouse, to which First Lady did Miles Davis respond: “Well, I’ve changed the course of music five or six times. What have you done except f**k the president?”', 'Nancy Reagan', 'Barbara Bush', 'Jackie Kennedy', 'Betty Ford', 'entertainment');
+var entertainOne = new Question('When asked what he had done with his life to merit an invitation to the Whitehouse, to which First Lady did Miles Davis respond: \'\'Well, I\'ve changed the course of music five or six times. What have you done except f**k the president?\'\'', 'Nancy Reagan', 'Barbara Bush', 'Jackie Kennedy', 'Betty Ford', 'entertainment');
 entertainmentQuestions.push(entertainOne);
 
 var entertainTwo = new Question('In the film Pineapple Express, which Star Wars creature is referenced by James Franco during his captivity?', 'Rancor', 'Tauntaun', 'Jawa', 'Wookie', 'entertainment');
@@ -61,13 +61,13 @@ entertainmentQuestions.push(entertainTwo);
 var entertainThree = new Question('Who wrote the poetry spoken in Beyonce\'s Lemonade film', 'Warsan Shire', 'Roxane Gay', 'Chiminanda Ngozi Adichi', 'bell hooks', 'entertainment');
 entertainmentQuestions.push(entertainThree);
 
-var entertainFour = new Question('In what year was Wu-Tang member Raekwon’s gold-selling “Only Built for Cuban Linx” released?', '1995', '1994', '1996', '1997', 'entertainment');
+var entertainFour = new Question('In what year was Wu-Tang member Raekwon’s gold-selling \'\'Only Built for Cuban Linx\'\' released?', '1995', '1994', '1996', '1997', 'entertainment');
 entertainmentQuestions.push(entertainFour);
 
 var entertainFive = new Question('Which Hip-Hop artist has acted in films alongside Edward Norton, Jack Black, and Bruce Willis?', 'Mos Def', 'Ludacris', 'Queen Latifah', 'Ice Cube', 'entertainment');
 entertainmentQuestions.push(entertainFive);
 
-var entertainSix = new Question('In the 1942 classic Casablanca, Humphrey Bogart’s character Rick Blaine speaks the famous line: “Of all the ____ joints, in all the towns in the world, she walks into mine.”', 'gin', 'whiskey', 'tequila', 'wine', 'entertainment');
+var entertainSix = new Question('In the 1942 classic Casablanca, Humphrey Bogart’s character Rick Blaine speaks the famous line: \'\'Of all the ____ joints, in all the towns in the world, she walks into mine.\'\'', 'gin', 'whiskey', 'tequila', 'wine', 'entertainment');
 entertainmentQuestions.push(entertainSix);
 
 var entertainSeven = new Question('Dr. Dre isn\'t known for his medical advice, but he suggests that his audiences "Smoke weed" how often?', 'Everyday', 'Twice a week', 'Never', 'Monthly', 'entertainment');
@@ -95,13 +95,13 @@ feminismQuestions.push(femThree);
 var femFour = new Question('What is Intersectional Feminism?', 'The view that women experience oppression in varying degrees of intensity.', 'Feminism at traffic intersections' , 'Feminism for cats', 'Black Lives Matter', 'feminism');
 feminismQuestions.push(femFour);
 
-var femFive = new Question('Which feminist author famously wrote, “Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare.” ?', 'Audre Lorde', 'Angela Davis', 'Gloria Steinem', 'Alice Walker', 'feminism');
+var femFive = new Question('Which feminist author famously wrote, \'\'Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare.\'\' ?', 'Audre Lorde', 'Angela Davis', 'Gloria Steinem', 'Alice Walker', 'feminism');
 feminismQuestions.push(femFive);
 
-var femSix = new Question('Which Riot Grrrl said, “There’s just as many different kinds of feminism as there are women in the world.”?', 'Kathleen Hanna', 'Tobi Vail', 'Corin Tucker', 'Kathi Wilcox', 'feminism');
+var femSix = new Question('Which Riot Grrrl said, \'\'There’s just as many different kinds of feminism as there are women in the world.\'\'?', 'Kathleen Hanna', 'Tobi Vail', 'Corin Tucker', 'Kathi Wilcox', 'feminism');
 feminismQuestions.push(femSix);
 
-var femSeven = new Question('Who created “Feminist Frequency,” a pop culture critique site with a feminist bent?', 'Anita Sarkeesian', 'Alona King', 'Ellen Pao', 'Susan Wojcicki', 'feminism');
+var femSeven = new Question('Who created \'\'Feminist Frequency,\'\' a pop culture critique site with a feminist bent?', 'Anita Sarkeesian', 'Alona King', 'Ellen Pao', 'Susan Wojcicki', 'feminism');
 feminismQuestions.push(femSeven);
 
 var femEight = new Question('What does the term Anarcha feminist mean?', 'An Anarchist Feminist', 'A Feminist OB/GYN', 'A Spider Feminist', 'The Queen of all Feminists', 'feminism');
