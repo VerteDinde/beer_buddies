@@ -330,3 +330,10 @@ p.about {
   display: table;
   clear: both;
 }
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  border: none;
+  padding: 20px;
+}
