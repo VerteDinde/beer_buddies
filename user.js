@@ -36,14 +36,28 @@ function generateUser(event) {
     var userDataJSON = JSON.stringify(allUsers);
     localStorage.setItem('userData', userDataJSON);
   }
+  storeData();
+  resetIcon();
+}
 
-  // Start Game and Retrieve Data
-  var startButton = document.getElementById('play');
-  startButton.addEventListener('click', loadGame);
+// Start Game and Retrieve Data
+var startButton = document.getElementById('play');
+startButton.addEventListener('click', loadGame);
 
-  function loadGame(event) {
-    event.preventDefault();
-    storeData();
-    window.location.replace('category.html');
-  }
+function loadGame(event) {
+  event.preventDefault();
+  window.location.replace('category.html');
+}
+
+
+//Reset drink icons after user selection
+function resetIcon() {
+  var resetCocktail = document.getElementById('cocktail');
+  var resetTea = document.getElementById('tea');
+  var resetWine = document.getElementById('wine-glass');
+  var resetBeer = document.getElementById('beer-mug');
+  resetCocktail.checked = false;
+  resetTea.checked = false;
+  resetWine.checked = false;
+  resetBeer.checked = false;
 }
