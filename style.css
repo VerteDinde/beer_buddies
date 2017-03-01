@@ -5,13 +5,8 @@ body {
   text-align: center;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
 header {
-  /*text-align: center;*/
+  text-align: center;
   background: rgba(20, 30, 26, .15);
   padding: 5px;
   overflow: hidden;
@@ -20,11 +15,6 @@ header {
 form {
   text-align: center;
 }
-
-/*div {
-  display: block;
-  width: 200px;
-}*/
 
 img {
   border: 0.5px solid black;
@@ -50,11 +40,12 @@ h1 {
 
 h2 {
   font-weight: 600;
+  font-size: 1.75em;
 }
 
 h3 {
-  width: 375px;
-  font-size: 1.3em;
+  width: 75%;
+  font-size: 1.75em;
   line-height: 1.25em;
   text-align: center;
   margin: auto;
@@ -63,7 +54,7 @@ h3 {
 }
 
 main {
-  width: 960px;
+  text-align: center;
 }
 
 #questions {
