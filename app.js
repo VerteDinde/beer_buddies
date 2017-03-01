@@ -8,10 +8,27 @@ var questB = '';
 var questC = '';
 var questD = '';
 
+var currentUser;
+var allUsersCurrentIndex;
+
 // All localStorage functions //
 function callUserData() {
   var retrievedUserData = localStorage.getItem('userData');
   allUsers = JSON.parse(retrievedUserData);
+  currentUser = localStorage.getItem('currentUser');
+
+  for (var i = 0; i < allUsers.length; i++) {
+    if (allUsers[i].name === currentUser) {
+      allUsersCurrentIndex = i;
+      break;
+    }
+  }
+}
+
+function storeData(store) {
+  var userDataJSON = JSON.stringify(allUsers);
+  localStorage.setItem(store, userDataJSON);
+  console.log('storeData() :: storing data<' + store + '>');
 }
 
 function retrieveCategory() {
@@ -87,6 +104,7 @@ function clearUsers() {
 }
 
 // FUNCTIONS TO RUN GAME
+callUserData();
 function generateSports(qIndex) {
   retrieveCategory();
   clearUsers();   //this clears previous users in the footer 
