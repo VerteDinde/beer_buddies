@@ -31,6 +31,8 @@ header img {
 
 #answers {
   text-align: center;
+  margin: 0 auto;
+  width: 50%;
 }
 
 h1 {
@@ -59,7 +61,10 @@ main {
 
 #questions {
   text-align: center;
-  width: 700px;
+  width: 50%;
+  margin: 50px auto;
+  font-size: 1.5em;
+
 }
 
 #answer1,
@@ -149,6 +154,7 @@ main {
   margin: 5px;
   height: 55px;
   width: auto;
+  border: none;
 }
 
 div #play {
@@ -212,4 +218,8 @@ label {
   border: 1px solid #2f3a36;
   margin: 5px;
   width: 300px;
+}
+
+#users {
+  margin: 50px;
 }
