@@ -141,6 +141,11 @@ main {
   width: 600px;
 }
 
+#users {
+  display: inline-block;
+  width: 600px;
+}
+
 #cocktail,
 #tea,
 #wine-glass,
