@@ -170,7 +170,9 @@ function generateClickHandler(qIndex) {
         }
       }
     } else if (clickedAnswer === chosenCategory[qIndex].wrongOne || clickedAnswer === chosenCategory[qIndex].wrongTwo || clickedAnswer === chosenCategory[qIndex].wrongThree) {
+      debugger;
       printAnswer.textContent = 'Sorry, that\'s not the right answer';
+      allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + '1.png';
       console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
       userIndex++;
       if (userIndex === allUsers.length) {
