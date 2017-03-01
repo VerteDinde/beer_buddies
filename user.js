@@ -8,13 +8,14 @@ function User(name, drink) {
   this.name = name;
   this.drink = 'images/' + drink;
   this.score = 0;
+  this.drinkType = drink.slice(0, drink.length - 4);
 }
 
 // Store All User Data to localStorage
 function loadData() {
   if (localStorage['userData']) {
-  var userDataLSString = localStorage['userData'];
-  return JSON.parse(userDataLSString);
+    var userDataLSString = localStorage['userData'];
+    return JSON.parse(userDataLSString);
   } else {
     console.log('loadData() :: no userData key found in localStorage object');
   }
@@ -35,7 +36,9 @@ userForm.addEventListener('submit', generateUser);
 function generateUser(event) {
   console.log('generateUser() :: ***fired***');
   event.preventDefault();
-  allUsers = loadData();
+  if (localStorage === false) {
+    allUsers = loadData();
+  }
   var userName = event.target.username.value;
   var radios = event.target.avatar;
 
