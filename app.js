@@ -61,18 +61,22 @@ function scrambleAnswers(i) {
 function generateUsers() {
   // Add user information
   var userFooter = document.getElementById('users');
+  userFooter.textContent = ''; 
   for (var j = 0; j < allUsers.length; j++) {
+    var userBlock = document.createElement('div');
+    userBlock.id = 'user-block';
+    userFooter.appendChild(userBlock);
     var uName = document.createElement('div');
     uName.textContent = allUsers[j].name;
-    userFooter.appendChild(uName);
+    userBlock.appendChild(uName);
 
     var uDrink = document.createElement('img');
     uDrink.setAttribute('src', allUsers[j].drink);
-    userFooter.appendChild(uDrink);
+    userBlock.appendChild(uDrink);
 
     var uScore = document.createElement('div');
     uScore.textContent = allUsers[j].score;
-    userFooter.appendChild(uScore);
+    userBlock.appendChild(uScore);
   }
 }
 
@@ -137,6 +141,7 @@ function generateClickHandler(qIndex) {
 
     if (clickedAnswer === chosenCategory[qIndex].right) {
       printAnswer.textContent = 'Congrats! You got it right!';
+      allUsers.score ++;
       if (qIndex < (chosenCategory.length - 1)) {
         generateSports(qIndex + 1);
       } else {

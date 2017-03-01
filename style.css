@@ -233,6 +233,12 @@ label {
 
 #users {
   margin: 50px;
+  display: inline;
+}
+
+#user-block {
+  display: inline-block;
+  margin: 10px 10px;
 }
 
 footer {
