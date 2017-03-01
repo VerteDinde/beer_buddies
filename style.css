@@ -38,6 +38,7 @@ header img {
 h1 {
   font-weight: 900;
   font-size: 3em;
+  margin: 40px;
 }
 
 h2 {
@@ -216,10 +217,22 @@ label {
   font-size: 40px;
   font-weight: bold;
   border: 1px solid #2f3a36;
-  margin: 5px;
+  margin: 10px;
   width: 300px;
+  float: left;
+}
+
+#category {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
 }
 
 #users {
   margin: 50px;
+}
+
+#category_footer {
+  padding: 25px;
+  clear: both;
 }
