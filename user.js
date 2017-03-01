@@ -61,3 +61,19 @@ function resetIcon() {
   resetWine.checked = false;
   resetBeer.checked = false;
 }
+
+//Finding 1st 2nd 3rd etc User
+var winnerCircle = [];
+
+function winners() {
+  var winnerScore = [];
+  for(var i = 0; i < allUsers.length; i++) {
+    winnerScore.push(allUsers[i].score);
+  }
+  winnerScore.sort();
+  for(var j = 0; j < winnerScore.length; j++) {
+    if (winnerScore[j] === allUsers[j].score) {
+      winnerCircle.push(allUsers[j]);
+    }
+  }
+}
