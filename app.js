@@ -89,7 +89,6 @@ function clearUsers() {
 // FUNCTIONS TO RUN GAME
 function generateSports(qIndex) {
   retrieveCategory();
-  callUserData();
   clearUsers();   //this clears previous users in the footer 
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
@@ -134,6 +133,7 @@ function generateSports(qIndex) {
 }
 
 function generateClickHandler(qIndex) {
+  var userIndex = 0;  //tracks user index
 
   return function clickHandler(event) {
     var clickedAnswer = event.target.textContent;
@@ -141,18 +141,26 @@ function generateClickHandler(qIndex) {
 
     if (clickedAnswer === chosenCategory[qIndex].right) {
       printAnswer.textContent = 'Congrats! You got it right!';
-      allUsers.score ++;
-      if (qIndex < (chosenCategory.length - 1)) {
-        generateSports(qIndex + 1);
-      } else {
-        window.location.replace('about.html');
+      allUsers[userIndex].score++;
+      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
+      userIndex++;
+      if (userIndex === allUsers.length) {
+        if (qIndex < (chosenCategory.length - 1)) {
+          generateSports(qIndex + 1);
+        } else {
+          window.location.replace('about.html');
+        }
       }
     } else if (clickedAnswer === chosenCategory[qIndex].wrongOne || clickedAnswer === chosenCategory[qIndex].wrongTwo || clickedAnswer === chosenCategory[qIndex].wrongThree) {
       printAnswer.textContent = 'Sorry, that\'s not the right answer';
-      if (qIndex < (chosenCategory.length - 1)) {
-        generateSports(qIndex + 1);
-      } else {
-        window.location.replace('about.html');
+      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
+      userIndex++;
+      if (userIndex === allUsers.length) {
+        if (qIndex < (chosenCategory.length - 1)) {
+          generateSports(qIndex + 1);
+        } else {
+          window.location.replace('about.html');
+        }
       }
     } else {
       alert('Please choose an answer.');
@@ -160,5 +168,6 @@ function generateClickHandler(qIndex) {
   };
 }
 
+callUserData();
 generateSports(0);
 
