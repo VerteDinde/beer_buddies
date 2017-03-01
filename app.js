@@ -151,6 +151,7 @@ function generateSports(qIndex) {
 }
 
 function generateClickHandler(qIndex) {
+  var userIndex = 0;  //tracks user index
 
   return function clickHandler(event) {
     var clickedAnswer = event.target.textContent;
@@ -158,22 +159,26 @@ function generateClickHandler(qIndex) {
 
     if (clickedAnswer === chosenCategory[qIndex].right) {
       printAnswer.textContent = 'Congrats! You got it right!';
-
-      allUsers[allUsersCurrentIndex].score++; // increment score
-      console.log('Current user ' + allUsers[allUsersCurrentIndex].name + ' has score of: ' + allUsers[allUsersCurrentIndex].score); // replace with user feedback?
-
-      if (qIndex < (chosenCategory.length - 1)) {
-        generateSports(qIndex + 1);
-      } else {
-        window.location.replace('about.html');
+      allUsers[userIndex].score++;
+      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
+      userIndex++;
+      if (userIndex === allUsers.length) {
+        if (qIndex < (chosenCategory.length - 1)) {
+          generateSports(qIndex + 1);
+        } else {
+          window.location.replace('about.html');
+        }
       }
     } else if (clickedAnswer === chosenCategory[qIndex].wrongOne || clickedAnswer === chosenCategory[qIndex].wrongTwo || clickedAnswer === chosenCategory[qIndex].wrongThree) {
       printAnswer.textContent = 'Sorry, that\'s not the right answer';
-      if (qIndex < (chosenCategory.length - 1)) {
-        generateSports(qIndex + 1);
-      } else {
-        storeData('userData'); // done with game, store updated user with score property
-        window.location.replace('about.html');
+      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
+      userIndex++;
+      if (userIndex === allUsers.length) {
+        if (qIndex < (chosenCategory.length - 1)) {
+          generateSports(qIndex + 1);
+        } else {
+          window.location.replace('about.html');
+        }
       }
     } else {
       alert('Please choose an answer.');
@@ -181,5 +186,6 @@ function generateClickHandler(qIndex) {
   };
 }
 
+callUserData();
 generateSports(0);
 
