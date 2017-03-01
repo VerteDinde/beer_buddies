@@ -10,6 +10,21 @@ function User(name, drink) {
   this.score = 0;
 }
 
+// Store All User Data to localStorage
+function loadData(load) {
+  if (localStorage['userData']) {
+  var userDataLSString = localStorage['userData'];
+  load = JSON.parse(userDataLSString);
+  } else {
+    console.log('loadData() :: no userData key found in localStorage object');
+  }
+}
+
+function storeData(store) {
+  var userDataJSON = JSON.stringify(allUsers);
+  localStorage.setItem(store, userDataJSON);
+}
+
 // Gather User Data //
 // add event listener to the user submission form
 var userForm = document.getElementById('user-form');
@@ -17,9 +32,12 @@ userForm.addEventListener('submit', generateUser);
 
 // generate a new user from the event handler
 function generateUser(event) {
+  console.log('generateUser() :: ***fired***')
   event.preventDefault();
+  loadData(allUsers);
   var userName = event.target.username.value;
   var radios = event.target.avatar;
+
   for (var i = 0; i < radios.length; i++) {
     if (radios[i].checked === true) {
       var drinkSelected = (radios[i].value);
@@ -27,16 +45,25 @@ function generateUser(event) {
   }
   var userDrink = drinkSelected;
 
+  // check to see if user already exists, overwrite if so
   var newUser = new User(userName, userDrink);
-  allUsers.push(newUser);
+  var userNameConflict = false;
+  for (var i = 0; i < allUsers.length; i++) {
+    if (allUsers[i].name === newUser.name) {
+      allUsers[i] = newUser;
+      userNameConflict = true;
+      console.log('generateUser() :: name already exists; overwriting user object at index ' + i + ' of allUsers'); // consider giving user-visible feedback
+      break;
+    }
+  }
+
+  if (userNameConflict = false) {
+      allUsers.push(newUser);
+  }
+
   event.target.username.value = '';
 
-  // Store All User Data to localStorage
-  function storeData() {
-    var userDataJSON = JSON.stringify(allUsers);
-    localStorage.setItem('userData', userDataJSON);
-  }
-  storeData();
+  storeData('userData');
   resetIcon();
 }
 
