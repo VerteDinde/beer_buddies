@@ -107,7 +107,7 @@ feminismQuestions.push(femSeven);
 var femEight = new Question('What does the term Anarcha feminist mean?', 'An Anarchist Feminist', 'A Feminist OB/GYN', 'A Spider Feminist', 'The Queen of all Feminists', 'feminism');
 feminismQuestions.push(femEight);
 
-var femNine = new Question('Where was Beyonce\'s “Lemonade” filmed?', 'New Orleans', 'Houston', 'New York', 'Los Angeles', 'feminism');
+var femNine = new Question('Where was Beyonce\'s "Lemonade" filmed?', 'New Orleans', 'Houston', 'New York', 'Los Angeles', 'feminism');
 feminismQuestions.push(femNine);
 
 var femTen = new Question('Assata Shakur is most known for what?','All listed answers', 'Being a lead-member of the Black Panther Party in Harlem', 'Being named to the FBI\'s most wanted list in 2013', 'Being Tupac Shakur\'s godmother', 'feminism');
