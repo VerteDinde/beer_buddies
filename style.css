@@ -257,6 +257,22 @@ p.about {
   font-family: 'Open Sans';
 }
 
+/*------------------
+About Page: Table
+------------------*/
+
+table {
+  border: 1px solid black;
+}
+
+thead tr td {
+  border: 1px solid black;
+}
+
+/*------------------
+About Page: Bios
+------------------*/
+
 .morgan-and-keeley {
   width: 85%;
   margin: 40px auto;

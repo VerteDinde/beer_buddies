@@ -108,7 +108,6 @@ function loadGame(event) {
   window.location.replace('category.html');
 }
 
-
 //Reset drink icons after user selection
 function resetIcon() {
   var resetCocktail = document.getElementById('cocktail');

@@ -8,27 +8,15 @@ var questB = '';
 var questC = '';
 var questD = '';
 
-var currentUser;
-var allUsersCurrentIndex;
-
 // All localStorage functions //
 function callUserData() {
   var retrievedUserData = localStorage.getItem('userData');
   allUsers = JSON.parse(retrievedUserData);
-  currentUser = localStorage.getItem('currentUser');
-
-  for (var i = 0; i < allUsers.length; i++) {
-    if (allUsers[i].name === currentUser) {
-      allUsersCurrentIndex = i;
-      break;
-    }
-  }
 }
 
-function storeData(store) {
+function storeData() {
   var userDataJSON = JSON.stringify(allUsers);
-  localStorage.setItem(store, userDataJSON);
-  console.log('storeData() :: storing data<' + store + '>');
+  localStorage.setItem('userData', userDataJSON);
 }
 
 function retrieveCategory() {
@@ -45,7 +33,7 @@ function scrambleAnswers(i) {
   displayPossible.push(chosenCategory[i].wrongTwo);
   displayPossible.push(chosenCategory[i].wrongThree);
 
-  var randomNum = 0;
+  var randomNum = 0;  // eslint-disable-line
   function numGen() {
     return randomNum = Math.floor(Math.random() * 4);
   }
@@ -78,7 +66,7 @@ function scrambleAnswers(i) {
 function generateUsers() {
   // Add user information
   var userFooter = document.getElementById('users');
-  userFooter.textContent = ''; 
+  userFooter.textContent = '';
   for (var j = 0; j < allUsers.length; j++) {
     var userBlock = document.createElement('div');
     userBlock.id = 'user-block';
@@ -104,10 +92,9 @@ function clearUsers() {
 }
 
 // FUNCTIONS TO RUN GAME
-callUserData();
 function generateSports(qIndex) {
   retrieveCategory();
-  clearUsers();   //this clears previous users in the footer 
+  clearUsers();   //this clears previous users in the footer
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
   scrambleAnswers(qIndex);
@@ -160,7 +147,7 @@ function generateClickHandler(qIndex) {
     if (clickedAnswer === chosenCategory[qIndex].right) {
       printAnswer.textContent = 'Congrats! You got it right!';
       allUsers[userIndex].score++;
-      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
+      console.log(allUsers[userIndex], ' User Score ', allUsers[userIndex].score);
       userIndex++;
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
@@ -174,12 +161,13 @@ function generateClickHandler(qIndex) {
       printAnswer.textContent = 'Sorry, that\'s not the right answer';
       allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + stringNumber[allUsers[userIndex].wrongAnswer];
       allUsers[userIndex].wrongAnswer++;
-      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
+      console.log(allUsers[userIndex], ' User Score ', allUsers[userIndex].score);
       userIndex++;
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
           generateSports(qIndex + 1);
         } else {
+          storeData();
           window.location.replace('about.html');
         }
       }
@@ -191,5 +179,3 @@ function generateClickHandler(qIndex) {
 
 callUserData();
 generateSports(0);
-
-
