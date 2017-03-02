@@ -96,6 +96,18 @@ function generateUsers() {
     var uScore = document.createElement('div');
     uScore.textContent = allUsers[j].score;
     userBlock.appendChild(uScore);
+
+    // generates check or 'x' below user avatar
+    var uCorrect = document.createElement('div');
+    uCorrect.id = 'check';
+    var checkmark = document.createElement('img');
+    if (allUsers[j].scoreRight === true) {
+      checkmark.setAttribute('src', 'images/checkmark.png');
+    } else {
+      checkmark.setAttribute('src', 'images/x-mark.png');
+    }
+    userBlock.appendChild(uCorrect);
+    uCorrect.appendChild(checkmark);
   }
 }
 
@@ -154,14 +166,23 @@ function generateSports(qIndex) {
 
 function generateClickHandler(qIndex) {
   var userIndex = 0;  //tracks user index
+
+  // event handler executes
   return function clickHandler(event) {
     var clickedAnswer = event.target.textContent;
-    var printAnswer = document.getElementById('response');
+    
+    // generate green dot under active player
+    if (allUsers[userIndex]) {
+      var uCorrect = document.getElementById('check');
+      uCorrect.textContent = '';
+      var checkmark = document.createElement('img');
+      checkmark.setAttribute('src', 'images/green-dot.png');
+      uCorrect.appendChild(checkmark);
+    }
 
     if (clickedAnswer === chosenCategory[qIndex].right) {
-      printAnswer.textContent = 'Congrats! You got it right!';
       allUsers[userIndex].score++;
-      console.log(allUsers[userIndex], ' User Score ', allUsers[userIndex].score);
+      allUsers[userIndex].scoreRight = true;
       resetDrink();
       function resetDrink() {
         if (allUsers[userIndex].wrongAnswer === 5) {
@@ -180,7 +201,7 @@ function generateClickHandler(qIndex) {
       }
     } else if (clickedAnswer === chosenCategory[qIndex].wrongOne || clickedAnswer === chosenCategory[qIndex].wrongTwo || clickedAnswer === chosenCategory[qIndex].wrongThree) {
       var stringNumber = ['1.png', '2.png', '3.png', '4.png', '5.png'];
-      printAnswer.textContent = 'Sorry, that\'s not the right answer';
+      allUsers[userIndex].scoreRight = false;
       allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + stringNumber[allUsers[userIndex].wrongAnswer];
       incrementFrames();
       function incrementFrames() {
