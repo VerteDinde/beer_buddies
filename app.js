@@ -170,9 +170,10 @@ function generateClickHandler(qIndex) {
         }
       }
     } else if (clickedAnswer === chosenCategory[qIndex].wrongOne || clickedAnswer === chosenCategory[qIndex].wrongTwo || clickedAnswer === chosenCategory[qIndex].wrongThree) {
-      debugger;
+      var stringNumber = ['1.png', '2.png', '3.png', '4.png', '5.png'];
       printAnswer.textContent = 'Sorry, that\'s not the right answer';
-      allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + '1.png';
+      allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + stringNumber[allUsers[userIndex].wrongAnswer];
+      allUsers[userIndex].wrongAnswer++;
       console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
       userIndex++;
       if (userIndex === allUsers.length) {
@@ -190,4 +191,5 @@ function generateClickHandler(qIndex) {
 
 callUserData();
 generateSports(0);
+
 
