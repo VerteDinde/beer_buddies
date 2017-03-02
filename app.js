@@ -36,6 +36,8 @@ function retrieveCategory() {
   chosenCategory = JSON.parse(retrievedCategory);
 }
 
+// LOGIC
+
 function scramble(arr) {
   function numGen(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -48,7 +50,7 @@ function scramble(arr) {
   }
   console.log(arr);
 }
-// LOGIC
+
 //Randomizing order of possible answers
 function scrambleAnswers(i) {
   displayPossible = [];
