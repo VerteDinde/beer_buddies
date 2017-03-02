@@ -9,6 +9,8 @@ function User(name, drink) {
   this.drink = 'images/' + drink;
   this.score = 0;
   this.drinkType = drink.slice(0, drink.length - 4);
+  this.drinkNumber = 0;
+  this.wrongAnswer = 0;
 }
 
 // Store All User Data to localStorage
