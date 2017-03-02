@@ -36,6 +36,18 @@ function retrieveCategory() {
   chosenCategory = JSON.parse(retrievedCategory);
 }
 
+function scramble(arr) {
+  function numGen(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  for (var i = 0; i < arr.length; i++) {
+    var temp = arr[i];
+    var randomSwapIndex = numGen(i, arr.length);
+    arr[i] = arr[randomSwapIndex];
+    arr[randomSwapIndex] = temp;
+  }
+  console.log(arr);
+}
 // LOGIC
 //Randomizing order of possible answers
 function scrambleAnswers(i) {
@@ -105,8 +117,9 @@ function clearUsers() {
 
 // FUNCTIONS TO RUN GAME
 callUserData();
+retrieveCategory();
+scramble(chosenCategory);
 function generateSports(qIndex) {
-  retrieveCategory();
   clearUsers();   //this clears previous users in the footer 
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
