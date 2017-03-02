@@ -118,7 +118,7 @@ function chooseCategory() {
   var catSport = document.getElementById('sports');
   var sportText = document.getElementById('sport-text');
   catSport.addEventListener('click', categorySelector);
-  sportText.addEventListener('click', categorySelector)
+  sportText.addEventListener('click', categorySelector);
   var catEnt = document.getElementById('entertainment');
   var entertainText = document.getElementById('entertain-text');
   catEnt.addEventListener('click', categorySelector);
