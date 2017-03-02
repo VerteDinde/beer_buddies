@@ -278,9 +278,9 @@ p.about {
 /*------------------
 About Page: Table
 ------------------*/
-#table-name {
-  margin: 10px;
-  padding: 20px;
+#table-name th {
+  padding: 5px;
+  border: 1px solid black;
 }
 
 #results {
@@ -296,26 +296,14 @@ About Page: Table
   text-align: center;
 }
 
-#results #td {
+#table-points td {
   border: 1px solid black;
   text-align: center;
   padding: 5px;
 }
 
-/*#results tbody {
-  margin: 5% 10%;
-  padding: 5% 5%;
-}
-
-#results tr th {
-  margin: 5% 5%;
-  padding: 5% 5%;
-  border-bottom: 1px solid black;
-}
-
-#results td {
-  margin: 5% 5%;
-  padding: 5% 5%;*/
+.about {
+  margin: 3% auto;
 }
 
 /*------------------
