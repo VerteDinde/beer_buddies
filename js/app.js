@@ -8,6 +8,16 @@ var questB = '';
 var questC = '';
 var questD = '';
 
+// Question Counter
+var questionNum = 0;
+var playCounter = document.getElementById('out-of');
+playCounter.textContent = questionNum + ' / 10';
+function counterAdd() {
+  questionNum = questionNum + 1;
+  playCounter.textContent = questionNum + ' / 10';
+}
+
+
 // All localStorage functions //
 function callUserData() {
   var retrievedUserData = localStorage.getItem('userData');
@@ -163,6 +173,8 @@ function generateSports(qIndex) {
   //Event handler for above listeners
   var clickHandler = generateClickHandler(qIndex);
   answerDiv.addEventListener('click', clickHandler);
+
+  counterAdd();
 }
 
 function generateClickHandler(qIndex) {
