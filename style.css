@@ -303,6 +303,10 @@ User Avatars
   display: inline;
 }
 
+#user-block {
+  display: inline-block;
+}
+
 #user-block0,
 #user-block1,
 #user-block2,
