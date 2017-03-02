@@ -25,6 +25,20 @@ function retrieveCategory() {
 }
 
 // LOGIC
+
+function scramble(arr) {
+  function numGen(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  for (var i = 0; i < arr.length; i++) {
+    var temp = arr[i];
+    var randomSwapIndex = numGen(i, arr.length);
+    arr[i] = arr[randomSwapIndex];
+    arr[randomSwapIndex] = temp;
+  }
+  console.log(arr);
+}
+
 //Randomizing order of possible answers
 function scrambleAnswers(i) {
   displayPossible = [];
@@ -92,9 +106,10 @@ function clearUsers() {
 }
 
 // FUNCTIONS TO RUN GAME
+retrieveCategory();
+scramble(chosenCategory);
 function generateSports(qIndex) {
-  retrieveCategory();
-  clearUsers();   //this clears previous users in the footer
+  clearUsers();   //this clears previous users in the footer 
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
   scrambleAnswers(qIndex);
@@ -160,8 +175,15 @@ function generateClickHandler(qIndex) {
       var stringNumber = ['1.png', '2.png', '3.png', '4.png', '5.png'];
       printAnswer.textContent = 'Sorry, that\'s not the right answer';
       allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + stringNumber[allUsers[userIndex].wrongAnswer];
-      allUsers[userIndex].wrongAnswer++;
-      console.log(allUsers[userIndex], ' User Score ', allUsers[userIndex].score);
+      incrementFrames();
+      function incrementFrames() {
+        allUsers[userIndex].wrongAnswer++;
+        if (allUsers[userIndex].wrongAnswer === 5) {
+          allUsers[userIndex].wrongAnswer = 0;
+        }
+      }
+
+      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
       userIndex++;
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
