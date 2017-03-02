@@ -201,7 +201,7 @@ main {
 }
 
 .currentTurn {
-  border: 1px solid green;
+  border: 5px solid green;
 }
 
 #users {
