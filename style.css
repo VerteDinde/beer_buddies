@@ -104,6 +104,10 @@ h3 {
   font-weight: 300;
 }
 
+#index-footer {
+  color: white;
+}
+
 main {
   text-align: center;
   background-color: white;
