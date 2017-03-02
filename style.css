@@ -278,15 +278,31 @@ p.about {
 /*------------------
 About Page: Table
 ------------------*/
-
-table#results {
-  border: 1px solid black;
-  text-align: center;
-  margin: 3% auto;
-  padding: 5% 5%;
+#table-name {
+  margin: 10px;
+  padding: 20px;
 }
 
-#results tbody {
+#results {
+  border: 1px solid black;
+  text-align: center;
+  margin: 4% auto;
+  padding: 5% 5%;
+  width: 50%;
+}
+
+#table-name {
+  border: 1px solid black;
+  text-align: center;
+}
+
+#results #td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px;
+}
+
+/*#results tbody {
   margin: 5% 10%;
   padding: 5% 5%;
 }
@@ -299,7 +315,7 @@ table#results {
 
 #results td {
   margin: 5% 5%;
-  padding: 5% 5%;
+  padding: 5% 5%;*/
 }
 
 /*------------------
