@@ -116,26 +116,32 @@ feminismQuestions.push(femTen);
 //Category Selector CHANGE SPORTSQUESTIONS TO CHOSENCATEGORY LATER IN APP.JS
 function chooseCategory() {
   var catSport = document.getElementById('sports');
+  var sportText = document.getElementById('sport-text');
   catSport.addEventListener('click', categorySelector);
+  sportText.addEventListener('click', categorySelector)
   var catEnt = document.getElementById('entertainment');
+  var entertainText = document.getElementById('entertain-text');
   catEnt.addEventListener('click', categorySelector);
+  entertainText.addEventListener('click', categorySelector);
   var catFem = document.getElementById('feminism');
+  var femText = document.getElementById('fem-text');
   catFem.addEventListener('click', categorySelector);
+  femText.addEventListener('click', categorySelector);
 
   function categorySelector(event) {
     event.preventDefault();
     var clickedCategory = event.target;
-    if (clickedCategory === catSport) {
+    if (clickedCategory === catSport || clickedCategory === sportText) {
       chosenCategory = sportsQuestions;
       storeCategory(chosenCategory);
       window.location.replace('play.html');
     }
-    if (clickedCategory === catEnt) {
+    if (clickedCategory === catEnt || clickedCategory === entertainText) {
       chosenCategory = entertainmentQuestions;
       storeCategory(chosenCategory);
       window.location.replace('play.html');
     }
-    if (clickedCategory === catFem) {
+    if (clickedCategory === catFem || clickedCategory === femText) {
       chosenCategory = feminismQuestions;
       storeCategory(chosenCategory);
       window.location.replace('play.html');
