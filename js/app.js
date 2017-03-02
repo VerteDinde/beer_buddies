@@ -84,6 +84,7 @@ function generateUsers() {
   for (var j = 0; j < allUsers.length; j++) {
     var userBlock = document.createElement('div');
     userBlock.id = 'user-block';
+    userBlock.class = '';
     userFooter.appendChild(userBlock);
     var uName = document.createElement('div');
     uName.textContent = allUsers[j].name;
@@ -171,20 +172,11 @@ function generateClickHandler(qIndex) {
   return function clickHandler(event) {
     var clickedAnswer = event.target.textContent;
 
-    // generate green dot under active player
-    // this is only working for the first player
-    if (allUsers[userIndex]) {
-      var uCorrect = document.getElementById('check');
-      uCorrect.textContent = '';
-      var checkmark = document.createElement('img');
-      checkmark.setAttribute('src', 'images/green-dot.png');
-      uCorrect.appendChild(checkmark);
-    }
-
     if (clickedAnswer === chosenCategory[qIndex].right) {
+      activePlayer(userIndex);  // not working as intended
       allUsers[userIndex].score++;
       allUsers[userIndex].scoreRight = true;
-      resetDrink();
+      resetDrink(); // this is not working
       function resetDrink() {
         if (allUsers[userIndex].wrongAnswer === 5) {
           allUsers[userIndex].wrongAnswer = 0;
@@ -201,6 +193,7 @@ function generateClickHandler(qIndex) {
         }
       }
     } else if (clickedAnswer === chosenCategory[qIndex].wrongOne || clickedAnswer === chosenCategory[qIndex].wrongTwo || clickedAnswer === chosenCategory[qIndex].wrongThree) {
+      activePlayer(userIndex);  // not working as intended
       var stringNumber = ['1.png', '2.png', '3.png', '4.png', '5.png'];
       allUsers[userIndex].scoreRight = false;
       allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + stringNumber[allUsers[userIndex].wrongAnswer];
@@ -225,6 +218,18 @@ function generateClickHandler(qIndex) {
       alert('Please choose an answer.');
     }
   };
+}
+
+// generate green dot under active player
+// this is only working for the first player; not working as intended
+function activePlayer(userIndex) {
+  if (allUsers[userIndex]) {
+    var uCorrect = document.getElementById('check');
+    uCorrect.textContent = '';
+    var checkmark = document.createElement('img');
+    checkmark.setAttribute('src', 'images/green-dot.png');
+    uCorrect.appendChild(checkmark);
+  }
 }
 
 callUserData();

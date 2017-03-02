@@ -11,8 +11,6 @@ function retrieveUsers() {
   allUsers = JSON.parse(retrievedUsers);
 }
 
-
-
 // Run initial functions to populate user data
 retrieveUsers();
 
