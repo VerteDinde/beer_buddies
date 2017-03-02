@@ -125,6 +125,12 @@ main {
   font-family: 'Open Sans';
 }
 
+#fem-text,
+#entertain-text,
+#sport-text {
+  cursor: default;
+}
+
 #answer1,
 #answer2,
 #answer3,
@@ -136,6 +142,7 @@ main {
   background-color: #2f3136;
   color: white;
   font-family: 'Kavoon';
+  cursor: default;
 }
 
 
