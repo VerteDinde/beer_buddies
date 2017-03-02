@@ -89,7 +89,7 @@ feminismQuestions.push(femOne);
 var femTwo = new Question('Who are the current female Supreme Court members?', 'Justice Sonya Sotomayor, Justice Ruth Bader Ginsburg, Justice Elena Kagan', 'Justice Notorious R.B.G., Justice Notorious B.I.G., Justice Antonin Scalia', 'Justice Sandra Day O\'Connor, Justice Sonya Sotomayor, Justice Ruth Bader Ginsburg', 'Justice Michelle Obama, Justice Condoleeza Rice, Justice Hillary Clinton', 'feminism');
 feminismQuestions.push(femTwo);
 
-var femThree = new Question('Who was the first woman to win the Nobel Prize for Science(first for Physics, then years later in Chemistry)?', 'Marie Curie', 'Ada Lovelace', 'Rachel Carson', 'Sally Ride', 'feminism');
+var femThree = new Question('Who was the first woman to win the Nobel Prize for Science (first for Physics, then years later in Chemistry)?', 'Marie Curie', 'Ada Lovelace', 'Rachel Carson', 'Sally Ride', 'feminism');
 feminismQuestions.push(femThree);
 
 var femFour = new Question('What is Intersectional Feminism?', 'The view that women experience oppression in varying degrees of intensity.', 'Feminism at traffic intersections' , 'Feminism for cats', 'Black Lives Matter', 'feminism');
@@ -98,7 +98,7 @@ feminismQuestions.push(femFour);
 var femFive = new Question('Which feminist author famously wrote, \'\'Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare.\'\' ?', 'Audre Lorde', 'Angela Davis', 'Gloria Steinem', 'Alice Walker', 'feminism');
 feminismQuestions.push(femFive);
 
-var femSix = new Question('Which Riot Grrrl said, \'\'There’s just as many different kinds of feminism as there are women in the world.\'\'?', 'Kathleen Hanna', 'Tobi Vail', 'Corin Tucker', 'Kathi Wilcox', 'feminism');
+var femSix = new Question('Which Riot Grrrl said, \'\'There\'s just as many different kinds of feminism as there are women in the world.\'\'?', 'Kathleen Hanna', 'Tobi Vail', 'Corin Tucker', 'Kathi Wilcox', 'feminism');
 feminismQuestions.push(femSix);
 
 var femSeven = new Question('Who created \'\'Feminist Frequency,\'\' a pop culture critique site with a feminist bent?', 'Anita Sarkeesian', 'Alona King', 'Ellen Pao', 'Susan Wojcicki', 'feminism');
