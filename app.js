@@ -154,7 +154,6 @@ function generateSports(qIndex) {
 
 function generateClickHandler(qIndex) {
   var userIndex = 0;  //tracks user index
-
   return function clickHandler(event) {
     var clickedAnswer = event.target.textContent;
     var printAnswer = document.getElementById('response');
@@ -168,6 +167,7 @@ function generateClickHandler(qIndex) {
         if (qIndex < (chosenCategory.length - 1)) {
           generateSports(qIndex + 1);
         } else {
+          storeData();  // stores user data for about.html
           window.location.replace('about.html');
         }
       }
@@ -182,14 +182,13 @@ function generateClickHandler(qIndex) {
           allUsers[userIndex].wrongAnswer = 0;
         }
       }
-
       console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
       userIndex++;
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
           generateSports(qIndex + 1);
         } else {
-          storeData();
+          storeData();  // stores user data for about.html
           window.location.replace('about.html');
         }
       }
