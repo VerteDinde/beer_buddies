@@ -8,6 +8,15 @@ Fonts
 Body
 ------------------*/
 
+header {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(250, 228, 201, 100);
+  padding: 5px 5px;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #2f3a36;
@@ -15,12 +24,6 @@ body {
   text-align: center;
 }
 
-header {
-  text-align: center;
-  background: rgba(20, 30, 26, .15);
-  padding: 5px;
-  overflow: hidden;
-}
 
 form {
   text-align: center;
@@ -31,12 +34,11 @@ img {
 }
 
 header img {
-  border-radius: 2px;
   padding: 5px 0px;
-  background-color: white;
   float: left;
-  margin: 7px;
-  height: 55px;
+  margin: 10px;
+  height: 75px;
+  border: none;
 }
 
 #answers {
@@ -55,6 +57,7 @@ h1 {
 h2 {
   font-weight: 600;
   font-size: 1.75em;
+  margin: 25px;
   font-family: 'Kavoon';
 }
 
@@ -264,26 +267,39 @@ About Page
 
 h3.about {
   font-family: 'Kavoon';
+  line-height: 120%;
 }
 
 p.about {
   font-family: 'Open Sans';
+  line-height: 120%;
 }
 
 /*------------------
 About Page: Table
 ------------------*/
 
-table {
+table#results {
   border: 1px solid black;
+  text-align: center;
+  margin: 3% auto;
+  padding: 5% 5%;
 }
 
-#results {
-  border: 1px solid black;
+#results tbody {
+  margin: 5% 10%;
+  padding: 5% 5%;
 }
 
-#results thead tr td {
-  border: 1px solid black;
+#results tr th {
+  margin: 5% 5%;
+  padding: 5% 5%;
+  border-bottom: 1px solid black;
+}
+
+#results td {
+  margin: 5% 5%;
+  padding: 5% 5%;
 }
 
 /*------------------
@@ -362,11 +378,4 @@ About Page: Bios
   content: "";
   display: table;
   clear: both;
-}
-
-table {
-  margin: 0 auto;
-  text-align: center;
-  border: none;
-  padding: 20px;
 }
