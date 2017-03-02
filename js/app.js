@@ -110,13 +110,13 @@ function generateUsers() {
 
     // generates check or 'x' below user avatar
     var uCorrect = document.createElement('div');
-    uCorrect.id = 'check' + j;
+    uCorrect.id = 'check';
     var checkmark = document.createElement('img');
-    // if (allUsers[j].scoreRight === true) {
-    //   checkmark.setAttribute('src', 'images/checkmark.png');
-    // } else {
-    //   checkmark.setAttribute('src', 'images/x-mark.png');
-    // }
+    if (allUsers[j].scoreRight === true) {
+      checkmark.setAttribute('src', 'images/checkmark.png');
+    } else {
+      checkmark.setAttribute('src', 'images/x-mark.png');
+    }
     userBlock.appendChild(uCorrect);
     uCorrect.appendChild(checkmark);
   }
@@ -190,13 +190,12 @@ function generateClickHandler(qIndex) {
       allUsers[userIndex].scoreRight = true;
       resetDrink(); // this is not working
       function resetDrink() {
-        if (allUsers[userIndex].wrongAnswer === 5) {
-          allUsers[userIndex].wrongAnswer = 0;
+        if (allUsers[userIndex].drink === 'images/' + allUsers[userIndex].drinkType + '5.png') {
           allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + '.png';
         }
       }
       userIndex++;
-      activePlayer(userIndex);  // not working as intended
+      activePlayer(userIndex);
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
           generateSports(qIndex + 1);
@@ -237,9 +236,9 @@ function generateClickHandler(qIndex) {
 // this is only working for the first player; not working as intended
 function activePlayer(userIndex) {
   if (userIndex > 0) {
-  var previousUser = document.getElementById('user-block' + (userIndex - 1));
-  previousUser.classList.remove('currentTurn');
-  } 
+    var previousUser = document.getElementById('user-block' + (userIndex - 1));
+    previousUser.classList.remove('currentTurn');
+  }
   if (allUsers[userIndex]) {
     var currentUser = document.getElementById('user-block' + userIndex);
     currentUser.classList.add('currentTurn');
