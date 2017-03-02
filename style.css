@@ -314,6 +314,7 @@ About Page: Table
 #table-name th {
   padding: 5px;
   border: 1px solid black;
+  width: 200px;
 }
 
 #results {
@@ -321,7 +322,6 @@ About Page: Table
   text-align: center;
   margin: 4% auto;
   padding: 5% 5%;
-  width: 50%;
 }
 
 #table-name {
@@ -333,6 +333,7 @@ About Page: Table
   border: 1px solid black;
   text-align: center;
   padding: 5px;
+  width: 200px;
 }
 
 .about {
