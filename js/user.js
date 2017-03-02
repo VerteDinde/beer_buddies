@@ -62,11 +62,14 @@ function generateUser(event) {
       break;
     }
   }
-  if (userNameConflict === false) {
-    allUsers.push(newUser);
-    console.log('generateUser() :: pushing newUser<' + newUser + '> to allUsers');
+  if (allUsers.length < 4) {
+    if (userNameConflict === false) {
+      allUsers.push(newUser);
+      console.log('generateUser() :: pushing newUser<' + newUser + '> to allUsers');
+    }
+  } else {
+    alert('Sorry, 4 players max!');
   }
-
   localStorage.setItem('currentUser', newUser.name); // used by app.js
 
   event.target.username.value = '';
