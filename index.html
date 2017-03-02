@@ -2,24 +2,25 @@
 <html>
   <head>
     <title>Beer Buddy</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div class="container">
     <header>
-      <a href="index.html"> <img src="images/beer-outline.jpg"/></a>
+      <a href="index.html"> <img src="images/smile-beer.png"/></a>
       <a href="about.html" id="buddies">About the Buddies</a>
     </header>
     <main>
       <h1>Beer Buddy</h1>
       <h3>Beer Buddy is a trivia drinking game. Choose an avatar. Choose a category. Answer questions. Any wrong answer will fill your glass in small increments.</h3><br>
       <h3>Losers chug.</h3><br>
-      <h3>And grab a real life drink and real life Buddy to play along.</h3>
+      <h3>Grab a real life drink and real life buddy to play along.</h3>
       <form id="user-form">
-        <p><input name="username" type="text" placeholder="Your Name Goes Here.   " id="username"><p>
+        <p><input name="username" type="text" placeholder="Your Name Goes Here.   " id="username" required><p>
         <h2>Choose Your Avatar</h2>
         <p><div id="avatars">
-          <input name="avatar" type="radio" id="cocktail" value="cocktail.png" />
+          <input name="avatar" type="radio" id="cocktail" value="cocktail.png" required/>
           <label for="cocktail"></label>
           <input name="avatar" type="radio" id="tea" value="tea.png" />
           <label for="tea"></label>

@@ -34,7 +34,7 @@ var tableResults = document.getElementById('table-points');
 
 function onFinal() {
   for (var i = 0; i < winnerCircle.length; i++) {
-    var winnerName = document.createElement('td');
+    var winnerName = document.createElement('th');
     winnerName.textContent = winnerCircle[i].name;
     tableName.appendChild(winnerName);
 
