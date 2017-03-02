@@ -185,6 +185,10 @@ main {
   width: 600px;
 }
 
+.currentTurn {
+  border: 1px solid green;
+}
+
 #users {
   display: inline-block;
   width: 600px;
@@ -284,7 +288,10 @@ User Avatars
   display: inline;
 }
 
-#user-block {
+#user-block0,
+#user-block1,
+#user-block2,
+#user-block3 {
   display: inline-block;
   font-size: 17px;
   margin: 10px 10px;

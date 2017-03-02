@@ -83,7 +83,7 @@ function generateUsers() {
   userFooter.textContent = '';
   for (var j = 0; j < allUsers.length; j++) {
     var userBlock = document.createElement('div');
-    userBlock.id = 'user-block';
+    userBlock.id = 'user-block' + j;
     userBlock.class = '';
     userFooter.appendChild(userBlock);
     var uName = document.createElement('div');
@@ -100,13 +100,13 @@ function generateUsers() {
 
     // generates check or 'x' below user avatar
     var uCorrect = document.createElement('div');
-    uCorrect.id = 'check';
+    uCorrect.id = 'check' + j;
     var checkmark = document.createElement('img');
-    if (allUsers[j].scoreRight === true) {
-      checkmark.setAttribute('src', 'images/checkmark.png');
-    } else {
-      checkmark.setAttribute('src', 'images/x-mark.png');
-    }
+    // if (allUsers[j].scoreRight === true) {
+    //   checkmark.setAttribute('src', 'images/checkmark.png');
+    // } else {
+    //   checkmark.setAttribute('src', 'images/x-mark.png');
+    // }
     userBlock.appendChild(uCorrect);
     uCorrect.appendChild(checkmark);
   }
@@ -126,6 +126,7 @@ function generateSports(qIndex) {
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
   scrambleAnswers(qIndex);
+  activePlayer(0);
 
   //Add sports questions to the DOM
   var questionsAppend = document.getElementById('questions');
@@ -173,7 +174,6 @@ function generateClickHandler(qIndex) {
     var clickedAnswer = event.target.textContent;
 
     if (clickedAnswer === chosenCategory[qIndex].right) {
-      activePlayer(userIndex);  // not working as intended
       allUsers[userIndex].score++;
       allUsers[userIndex].scoreRight = true;
       resetDrink(); // this is not working
@@ -184,6 +184,7 @@ function generateClickHandler(qIndex) {
         }
       }
       userIndex++;
+      activePlayer(userIndex);  // not working as intended
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
           generateSports(qIndex + 1);
@@ -193,7 +194,6 @@ function generateClickHandler(qIndex) {
         }
       }
     } else if (clickedAnswer === chosenCategory[qIndex].wrongOne || clickedAnswer === chosenCategory[qIndex].wrongTwo || clickedAnswer === chosenCategory[qIndex].wrongThree) {
-      activePlayer(userIndex);  // not working as intended
       var stringNumber = ['1.png', '2.png', '3.png', '4.png', '5.png'];
       allUsers[userIndex].scoreRight = false;
       allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + stringNumber[allUsers[userIndex].wrongAnswer];
@@ -206,6 +206,7 @@ function generateClickHandler(qIndex) {
       }
       console.log(allUsers[userIndex], ' User Score ', allUsers[userIndex].score);
       userIndex++;
+      activePlayer(userIndex);  // not working as intended
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
           generateSports(qIndex + 1);
@@ -223,14 +224,16 @@ function generateClickHandler(qIndex) {
 // generate green dot under active player
 // this is only working for the first player; not working as intended
 function activePlayer(userIndex) {
+  if (userIndex > 0) {
+  var previousUser = document.getElementById('user-block' + (userIndex - 1));
+  previousUser.classList.remove('currentTurn');
+  } 
   if (allUsers[userIndex]) {
-    var uCorrect = document.getElementById('check');
-    uCorrect.textContent = '';
-    var checkmark = document.createElement('img');
-    checkmark.setAttribute('src', 'images/green-dot.png');
-    uCorrect.appendChild(checkmark);
+    var currentUser = document.getElementById('user-block' + userIndex);
+    currentUser.classList.add('currentTurn');
   }
 }
 
 callUserData();
 generateSports(0);
+
