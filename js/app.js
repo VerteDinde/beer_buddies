@@ -172,6 +172,7 @@ function generateClickHandler(qIndex) {
     var clickedAnswer = event.target.textContent;
     
     // generate green dot under active player
+    // this is only working for the first player
     if (allUsers[userIndex]) {
       var uCorrect = document.getElementById('check');
       uCorrect.textContent = '';
