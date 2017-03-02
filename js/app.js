@@ -170,7 +170,7 @@ function generateClickHandler(qIndex) {
   // event handler executes
   return function clickHandler(event) {
     var clickedAnswer = event.target.textContent;
-    
+
     // generate green dot under active player
     // this is only working for the first player
     if (allUsers[userIndex]) {
