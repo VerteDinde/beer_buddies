@@ -9,7 +9,7 @@ Body
 ------------------*/
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #2f3a36;
   background-color: #c3e0c5;
   text-align: center;
@@ -27,7 +27,7 @@ form {
 }
 
 img {
-  border: 0.5px solid black;
+  border: none;
 }
 
 header img {
@@ -49,11 +49,13 @@ h1 {
   font-weight: 900;
   font-size: 3em;
   margin: 40px;
+  font-family: 'Kavoon';
 }
 
 h2 {
   font-weight: 600;
   font-size: 1.75em;
+  font-family: 'Kavoon';
 }
 
 h3 {
@@ -63,7 +65,6 @@ h3 {
   text-align: center;
   margin: auto;
   font-weight: 300;
-
 }
 
 main {
@@ -75,7 +76,7 @@ main {
   width: 50%;
   margin: 50px auto 0px auto;
   font-size: 1.5em;
-
+  font-family: 'Open Sans';
 }
 
 #answer1,
@@ -88,6 +89,7 @@ main {
   padding: 5px;
   background-color: #2f3136;
   color: white;
+  font-family: 'Kavoon';
 }
 
 
@@ -239,6 +241,7 @@ label {
 #user-block {
   display: inline-block;
   margin: 10px 10px;
+  font-family: 'Kavoon';
 }
 
 footer {
@@ -265,7 +268,11 @@ table {
   border: 1px solid black;
 }
 
-thead tr td {
+#results {
+  border: 1px solid black;
+}
+
+#results thead tr td {
   border: 1px solid black;
 }
 

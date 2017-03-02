@@ -109,7 +109,7 @@ function clearUsers() {
 retrieveCategory();
 scramble(chosenCategory);
 function generateSports(qIndex) {
-  clearUsers();   //this clears previous users in the footer 
+  clearUsers();   //this clears previous users in the footer
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
   scrambleAnswers(qIndex);
@@ -162,6 +162,13 @@ function generateClickHandler(qIndex) {
       printAnswer.textContent = 'Congrats! You got it right!';
       allUsers[userIndex].score++;
       console.log(allUsers[userIndex], ' User Score ', allUsers[userIndex].score);
+      resetDrink();
+      function resetDrink() {
+        if (allUsers[userIndex].wrongAnswer === 5) {
+          allUsers[userIndex].wrongAnswer = 0;
+          allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + '.png';
+        }
+      }
       userIndex++;
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
@@ -182,7 +189,7 @@ function generateClickHandler(qIndex) {
           allUsers[userIndex].wrongAnswer = 0;
         }
       }
-      console.log(allUsers[userIndex], " User Score ", allUsers[userIndex].score);
+      console.log(allUsers[userIndex], ' User Score ', allUsers[userIndex].score);
       userIndex++;
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {

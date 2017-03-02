@@ -61,16 +61,16 @@ entertainmentQuestions.push(entertainTwo);
 var entertainThree = new Question('Who wrote the poetry spoken in Beyonce\'s Lemonade film', 'Warsan Shire', 'Roxane Gay', 'Chiminanda Ngozi Adichi', 'bell hooks', 'entertainment');
 entertainmentQuestions.push(entertainThree);
 
-var entertainFour = new Question('In what year was Wu-Tang member Raekwon’s gold-selling \'\'Only Built for Cuban Linx\'\' released?', '1995', '1994', '1996', '1997', 'entertainment');
+var entertainFour = new Question('In what year was Wu-Tang member Raekwon\'s gold-selling \'\'Only Built for Cuban Linx\'\' released?', '1995', '1994', '1996', '1997', 'entertainment');
 entertainmentQuestions.push(entertainFour);
 
 var entertainFive = new Question('Which Hip-Hop artist has acted in films alongside Edward Norton, Jack Black, and Bruce Willis?', 'Mos Def', 'Ludacris', 'Queen Latifah', 'Ice Cube', 'entertainment');
 entertainmentQuestions.push(entertainFive);
 
-var entertainSix = new Question('In the 1942 classic Casablanca, Humphrey Bogart’s character Rick Blaine speaks the famous line: \'\'Of all the ____ joints, in all the towns in the world, she walks into mine.\'\'', 'gin', 'whiskey', 'tequila', 'wine', 'entertainment');
+var entertainSix = new Question('In the 1942 classic Casablanca, Humphrey Bogart\'s character Rick Blaine speaks the famous line: \'\'Of all the ____ joints, in all the towns in the world, she walks into mine.\'\'', 'gin', 'whiskey', 'tequila', 'wine', 'entertainment');
 entertainmentQuestions.push(entertainSix);
 
-var entertainSeven = new Question('Dr. Dre isn\'t known for his medical advice, but he suggests that his audiences "Smoke weed" how often?', 'Everyday', 'Twice a week', 'Never', 'Monthly', 'entertainment');
+var entertainSeven = new Question('Dr. Dre isn\'t known for his medical advice, but he suggests that his audiences "smoke weed" how often?', 'Everyday', 'Twice a week', 'Never', 'Monthly', 'entertainment');
 entertainmentQuestions.push(entertainSeven);
 
 var entertainEight = new Question('Lost in La Mancha is a 2002 documentary about which renowned Sci/Fi and Fantasy director\'s failed attempt to finish a film about the story of Don Quixote?', 'Terry Gilliam', 'J.J. Abrams', 'Guillermo del Toro', 'Ridley Scott', 'entertainment');
@@ -107,7 +107,7 @@ feminismQuestions.push(femSeven);
 var femEight = new Question('What does the term Anarcha feminist mean?', 'An Anarchist Feminist', 'A Feminist OB/GYN', 'A Spider Feminist', 'The Queen of all Feminists', 'feminism');
 feminismQuestions.push(femEight);
 
-var femNine = new Question('Where was Beyonce’s “Lemonade” filmed?', 'New Orleans', 'Houston', 'New York', 'Los Angeles', 'feminism');
+var femNine = new Question('Where was Beyonce\'s “Lemonade” filmed?', 'New Orleans', 'Houston', 'New York', 'Los Angeles', 'feminism');
 feminismQuestions.push(femNine);
 
 var femTen = new Question('Assata Shakur is most known for what?','All listed answers', 'Being a lead-member of the Black Panther Party in Harlem', 'Being named to the FBI’s most wanted list in 2013', 'Being Tupac Shakur’s godmother', 'feminism');
