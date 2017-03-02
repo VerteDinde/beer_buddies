@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Beer Buddy</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div class="container">
+
+<head>
+  <title>Beer Buddy</title>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <section class="intro">
+    <div class="homepage-hero-module">
+      <div class="video-container">
+        <div class="filter"></div>
+        <video poster="vid/Three-Cocktails.jpg" id="bgvid" playsinline autoplay muted loop>
+          <source src="vid/Three-Cocktails.webm" type="video/webm">
+          <source src="vid/Three-Cocktails.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
     <header>
-      <a href="index.html"> <img src="images/smile-beer.png"/></a>
+      <a href="index.html"> <img src="images/smile-beer-1.png" /></a>
       <a href="about.html" id="buddies">About the Buddies</a>
     </header>
-    <main>
       <h1>Beer Buddy</h1>
-      <h3>Beer Buddy is a trivia drinking game. Choose an avatar. Choose a category. Answer questions. Any wrong answer will fill your glass in small increments.</h3><br>
+      <h3>Beer Buddy is a trivia drinking game. Choose an avatar. Choose a category. Answer questions. Any wrong answer will
+        fill your glass in small increments.</h3><br>
       <h3>Losers chug.</h3><br>
       <h3>Grab a real life drink and real life buddy to play along.</h3>
+    </section>
+    <main>
       <form id="user-form">
-        <p><input name="username" type="text" placeholder="Your Name Goes Here.   " id="username" required><p>
-        <h2>Choose Your Avatar</h2>
-        <p><div id="avatars">
-          <input name="avatar" type="radio" id="cocktail" value="cocktail.png" required/>
-          <label for="cocktail"></label>
-          <input name="avatar" type="radio" id="tea" value="tea.png" />
-          <label for="tea"></label>
-          <input name="avatar" type="radio" id="wine-glass" value="wine-glass.png" />
-          <label for="wine-glass"></label>
-          <input name="avatar" type="radio" id="beer-mug" value="beer-mug.png" />
-          <label for="beer-mug"></label>
-        </div></p>
-        <p><input type="submit" value="Submit Avatar" id="submit"></p>
+        </br>
+        <h2>Choose Your Player Name</h2>
+        <p><input name="username" type="text" placeholder="Your Name Goes Here.   " id="username" required></p>
+        <h2>Choose Your Drink Avatar</h2>
+            <p><div id="avatars">
+                <input name="avatar" type="radio" id="cocktail" value="cocktail.png" required/>
+                <label for="cocktail"></label>
+                <input name="avatar" type="radio" id="tea" value="tea.png" />
+                <label for="tea"></label>
+                <input name="avatar" type="radio" id="wine-glass" value="wine-glass.png" />
+                <label for="wine-glass"></label>
+                <input name="avatar" type="radio" id="beer-mug" value="beer-mug.png" />
+                <label for="beer-mug"></label>
+              </div></p>
+            <p><input type="submit" value="Creater Player" id="submit"></p>
       </form>
       <section class="users">
-        <div id="users"><div>
+        <div id="users"></div>
       </section>
-      <div id="start"><button id="play">Start Game</button></div> 
+      <div id="start"><button id="play">Start Game</button></div>
     </main>
     <script src="js/user.js"></script>
-    </div>
-    <footer><h5>&copy; Beer Buddy 2017</h5></footer>
-    </div>
-  </body>
+    <footer>
+      <h5>&copy; Beer Buddy 2017</h5>
+    </footer>
+</body>
+
 </html>
