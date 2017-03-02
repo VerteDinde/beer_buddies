@@ -233,6 +233,14 @@ label {
   text-align: center;
 }
 
+footer {
+  margin: 50px;
+}
+
+/*------------------
+User Avatars
+------------------*/
+
 #users {
   margin: 50px;
   display: inline;
@@ -240,12 +248,14 @@ label {
 
 #user-block {
   display: inline-block;
+  font-size: 17px;
   margin: 10px 10px;
   font-family: 'Kavoon';
 }
 
-footer {
-  margin: 50px;
+#check img {
+  height: 20px;
+  width: 20px;
 }
 
 /*------------------

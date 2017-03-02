@@ -79,14 +79,14 @@ entertainmentQuestions.push(entertainEight);
 var entertainNine = new Question('Who was the first ever Black Oscar winner in a category outside of acting?', 'Issac Hayes', 'Stevie Wonder', 'Hattie McDaniel', 'Sidney Poitier', 'entertainment');
 entertainmentQuestions.push(entertainNine);
 
-var entertainTen = new Question('What South-Western town is the setting for the acclaimed AMC television series Breaking Bad', 'Albequerque', 'Santa Fe', 'Phoenix', 'San Antonio', 'entertainment');
+var entertainTen = new Question('What South-Western town is the setting for the acclaimed AMC television series Breaking Bad?', 'Albequerque', 'Santa Fe', 'Phoenix', 'San Antonio', 'entertainment');
 entertainmentQuestions.push(entertainTen);
 
 //Feminism Questions Below This Line
 var femOne = new Question('The Equal Rights Amendment was first introduced to Congress in 1923 and intended to guarantee equal rights for women. In what year was this Amendment ratified?', 'It has not yet been ratified', '1977', '1979', '1982', 'feminism');
 feminismQuestions.push(femOne);
 
-var femTwo = new Question('Who are the current female Supreme Court members?', 'Justice Sonya Sotomayor, Justice Ruth Bader Ginsburg, Justice Elena Kagan', 'Justice Notorious R.B.G., Justice Notorious B.I.G., Justice Antonin Scalia', 'Justice Sandra Day O’Connor, Justice Sonya Sotomayor, Justice Ruth Bader Ginsburg', 'Justice Michelle Obama, Justice Condoleeza Rice, Justice Hillary Clinton', 'feminism');
+var femTwo = new Question('Who are the current female Supreme Court members?', 'Justice Sonya Sotomayor, Justice Ruth Bader Ginsburg, Justice Elena Kagan', 'Justice Notorious R.B.G., Justice Notorious B.I.G., Justice Antonin Scalia', 'Justice Sandra Day O\'Connor, Justice Sonya Sotomayor, Justice Ruth Bader Ginsburg', 'Justice Michelle Obama, Justice Condoleeza Rice, Justice Hillary Clinton', 'feminism');
 feminismQuestions.push(femTwo);
 
 var femThree = new Question('Who was the first woman to win the Nobel Prize for Science(first for Physics, then years later in Chemistry)?', 'Marie Curie', 'Ada Lovelace', 'Rachel Carson', 'Sally Ride', 'feminism');
@@ -110,7 +110,7 @@ feminismQuestions.push(femEight);
 var femNine = new Question('Where was Beyonce\'s “Lemonade” filmed?', 'New Orleans', 'Houston', 'New York', 'Los Angeles', 'feminism');
 feminismQuestions.push(femNine);
 
-var femTen = new Question('Assata Shakur is most known for what?','All listed answers', 'Being a lead-member of the Black Panther Party in Harlem', 'Being named to the FBI’s most wanted list in 2013', 'Being Tupac Shakur’s godmother', 'feminism');
+var femTen = new Question('Assata Shakur is most known for what?','All listed answers', 'Being a lead-member of the Black Panther Party in Harlem', 'Being named to the FBI\'s most wanted list in 2013', 'Being Tupac Shakur\'s godmother', 'feminism');
 feminismQuestions.push(femTen);
 
 //Category Selector CHANGE SPORTSQUESTIONS TO CHOSENCATEGORY LATER IN APP.JS
