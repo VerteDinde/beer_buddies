@@ -18,7 +18,7 @@ function counterAdd() {
 }
 
 
-// All localStorage functions //
+// All localStorage functions
 function callUserData() {
   var retrievedUserData = localStorage.getItem('userData');
   allUsers = JSON.parse(retrievedUserData);
@@ -34,8 +34,7 @@ function retrieveCategory() {
   chosenCategory = JSON.parse(retrievedCategory);
 }
 
-// LOGIC
-
+// Game logic functions: begin
 function scramble(arr) {
   function numGen(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -188,7 +187,7 @@ function generateClickHandler(qIndex) {
     if (clickedAnswer === chosenCategory[qIndex].right) {
       allUsers[userIndex].score++;
       allUsers[userIndex].scoreRight = true;
-      resetDrink(); // this is not working
+      resetDrink(); // resets user drink after 'chug'
       function resetDrink() {
         if (allUsers[userIndex].drink === 'images/' + allUsers[userIndex].drinkType + '5.png') {
           allUsers[userIndex].drink = 'images/' + allUsers[userIndex].drinkType + '.png';
@@ -232,8 +231,7 @@ function generateClickHandler(qIndex) {
   };
 }
 
-// generate green dot under active player
-// this is only working for the first player; not working as intended
+// generate green border around active player
 function activePlayer(userIndex) {
   if (userIndex > 0) {
     var previousUser = document.getElementById('user-block' + (userIndex - 1));

@@ -113,7 +113,7 @@ feminismQuestions.push(femNine);
 var femTen = new Question('Assata Shakur is most known for what?','All listed answers', 'Being a lead-member of the Black Panther Party in Harlem', 'Being named to the FBI\'s most wanted list in 2013', 'Being Tupac Shakur\'s godmother', 'feminism');
 feminismQuestions.push(femTen);
 
-//Category Selector CHANGE SPORTSQUESTIONS TO CHOSENCATEGORY LATER IN APP.JS
+//Category Selector function
 function chooseCategory() {
   var catSport = document.getElementById('sports');
   var sportText = document.getElementById('sport-text');
