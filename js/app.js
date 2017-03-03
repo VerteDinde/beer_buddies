@@ -131,7 +131,7 @@ function clearUsers() {
 // FUNCTIONS TO RUN GAME
 retrieveCategory();
 scramble(chosenCategory);
-function generateSports(qIndex) {
+function generateQuestions(qIndex) {
   clearUsers();   //this clears previous users in the footer
   generateUsers();  //this generates the score everytime
   var currentQ = chosenCategory[qIndex];
@@ -198,7 +198,7 @@ function generateClickHandler(qIndex) {
       activePlayer(userIndex);
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
-          generateSports(qIndex + 1);
+          generateQuestions(qIndex + 1);
         } else {
           storeData();  // stores user data for about.html
           window.location.replace('about.html');
@@ -220,7 +220,7 @@ function generateClickHandler(qIndex) {
       activePlayer(userIndex);  // not working as intended
       if (userIndex === allUsers.length) {
         if (qIndex < (chosenCategory.length - 1)) {
-          generateSports(qIndex + 1);
+          generateQuestions(qIndex + 1);
         } else {
           storeData();  // stores user data for about.html
           window.location.replace('about.html');
@@ -246,5 +246,5 @@ function activePlayer(userIndex) {
 }
 
 callUserData();
-generateSports(0);
+generateQuestions(0);
 
