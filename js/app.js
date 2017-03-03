@@ -232,8 +232,6 @@ function generateClickHandler(qIndex) {
   };
 }
 
-// generate green dot under active player
-// this is only working for the first player; not working as intended
 function activePlayer(userIndex) {
   if (userIndex > 0) {
     var previousUser = document.getElementById('user-block' + (userIndex - 1));
